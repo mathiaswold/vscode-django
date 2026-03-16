@@ -1,0 +1,17 @@
+name = "Django"
+scopeName = "source.django"
+
+repositories = [
+    "django-stuff",
+    "django-template-filter",
+    "django-template-tag-contrib",
+    "django-template-tag",
+    "string-double-quoted",
+    "string-single-quoted",
+    "entities",
+]
+
+[repository]
+
+[[patterns]]
+include = "#django-stuff"

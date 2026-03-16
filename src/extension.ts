@@ -1,6 +1,6 @@
 'use strict'
 
-import { ExtensionContext, languages } from 'vscode';
+import { ExtensionContext, extensions, languages, window } from 'vscode';
 import { TemplatePathProvider } from './providers/definitionProvider'
 import {
     DjangoAdminCompletionItemProvider,
@@ -16,6 +16,16 @@ import {
 import { postInitHook, SnippetProvider } from './utils';
 
 export async function activate(context: ExtensionContext): Promise<void> {
+    // Activate VS Code's built-in HTML language features for django-html
+    // See https://github.com/microsoft/vscode/issues/160585
+    const htmlExtension = extensions.getExtension('vscode.html-language-features')
+    if (htmlExtension) {
+        await htmlExtension.activate()
+    } else {
+        const output = window.createOutputChannel('Django')
+        output.appendLine('Warning: Could not find vscode.html-language-features. HTML language support will be limited.')
+    }
+
     const snippetProvider = new SnippetProvider(context.extensionUri);
 
     const definitions = new TemplatePathProvider()
