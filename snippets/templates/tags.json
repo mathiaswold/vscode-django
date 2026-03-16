@@ -435,27 +435,27 @@
     },
 
     "url": {
-        "description": "{% url \"some-url-name\" %}",
+        "description": "{% url 'some-url-name' %}",
         "prefix": "url",
-        "body": "{% url \"$1\" %}"
+        "body": "{% url '$1' %}"
     },
 
     "urlpk": {
-        "description": "{% url \"some-url-name\" pk=object.pk %}",
+        "description": "{% url 'some-url-name' pk=object.pk %}",
         "prefix": "urlpk",
-        "body": "{% url \"$1\" pk=${2:${3:object}.pk} %}"
+        "body": "{% url '$1' pk=${2:${3:object}.pk} %}"
     },
 
     "urlslug": {
-        "description": "{% url \"some-url-name\" slug=object.slug %}",
+        "description": "{% url 'some-url-name' slug=object.slug %}",
         "prefix": "urlslug",
-        "body": "{% url \"$1\" slug=${2:${3:object}.slug} %}"
+        "body": "{% url '$1' slug=${2:${3:object}.slug} %}"
     },
 
     "urlvar": {
-        "description": "{% url \"some-url-name\" as the_url %}",
+        "description": "{% url 'some-url-name' as the_url %}",
         "prefix": "urlvar",
-        "body": "{% url \"$1\" as $2 %}"
+        "body": "{% url '$1' as $2 %}"
     },
 
     "variable": {
