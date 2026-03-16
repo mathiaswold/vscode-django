@@ -520,5 +520,35 @@
         "description": "{% with key=value %} (paste)",
         "prefix": "with_paste",
         "body": "{% with $1=$2 %}${CLIPBOARD}{% endwith %}"
+    },
+
+    "partialdef": {
+        "description": "{% partialdef name %}{% endpartialdef %}",
+        "prefix": "partialdef",
+        "body": "{% partialdef $1 %}$0{% endpartialdef %}"
+    },
+
+    "partialdef_inline": {
+        "description": "{% partialdef name inline %}{% endpartialdef %}",
+        "prefix": "partialdef_inline",
+        "body": "{% partialdef $1 inline %}$0{% endpartialdef %}"
+    },
+
+    "endpartialdef": {
+        "description": "{% endpartialdef %}",
+        "prefix": "endpartialdef",
+        "body": "{% endpartialdef %}"
+    },
+
+    "partial": {
+        "description": "{% partial name %}",
+        "prefix": "partial",
+        "body": "{% partial $1 %}"
+    },
+
+    "querystring": {
+        "description": "{% querystring key=value %}",
+        "prefix": "querystring",
+        "body": "{% querystring $1=$2 %}"
     }
 }
